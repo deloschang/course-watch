@@ -1,4 +1,5 @@
 #!/usr/bin/python
+import time
 import urllib
 import urllib
 import urllib2
@@ -63,7 +64,7 @@ def get_spaces_available(dept_abbr, course_num):
     cj = cookielib.LWPCookieJar()
     opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
     urllib2.install_opener(opener)
-    headers =  {'User-agent' : 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'}
+    headers =  {'User-agent' : 'Mozilla/c.0 (compatible; MSIE 5.5; Windows NT)'}
     request = urllib2.Request(url, urllib.urlencode(post_data), headers)
     handle = urllib2.urlopen(request)
     html = handle.read()
@@ -85,10 +86,11 @@ def get_spaces_available(dept_abbr, course_num):
 available = get_spaces_available('EARS', 003)
 
 # test with email
-example(available)  
+#example(available)  
 
 while available == 0:
     # check again for space
+    time.sleep(30)
     available = get_spaces_available('EARS', 003)
 else:
     # respond and email me if course update
