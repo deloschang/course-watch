@@ -6,8 +6,6 @@ import urllib2
 import cookielib
 from html5lib import HTMLParser, treebuilders
 
-# Adapted from http://kutuma.blogspot.com/2007/08/sending-emails-via-gmail-with-python.html
- 
 import getpass
 import smtplib
 from email.MIMEMultipart import MIMEMultipart
