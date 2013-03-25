@@ -1,4 +1,6 @@
 #!/usr/bin/python
+# generously built off Parker Phinney's scraper
+
 import time
 import urllib
 import urllib
